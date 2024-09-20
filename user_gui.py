@@ -33,12 +33,12 @@ root.resizable(False, False)   # 設定畫面 x 方向和 y 方向都不能縮�
 def openfile(mode):
     global urdfPath, num_link, RobotId, number_of_joints, current_positions, a, d, alpha
     if mode == 0 :
-        g.urdfPath="urdf_files_dataset/urdf_files/robotics-toolbox/puma560_description/urdf/puma560_robot.urdf"
+        g.urdfPath="urdf_files/robotics-toolbox/puma560_description/urdf/puma560_robot.urdf"
+        
         print("Loading puma560_robot modle...")
         g.RobotId = p.loadURDF(g.urdfPath, StartPos, StartOrientation,useFixedBase=True)
         g.a= [0.0, 0.0, 43.18, 0.0, 0.0, 0.0] #cm
         g.d = [0.0, 0.0, 15.01, 0.0, 43.31, 0.0]
-       
         g.alpha = [0.0, -90, 0.0, -90, 90, -90]
         g.T_B0 =  np.array([[1.0, 0.0, 0.0, 0.0],
                     [0.0, 1.0, 0.0, 0.0],
